@@ -27,6 +27,7 @@
      font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
      color: $text-color;
      background-color: $background-color;
+     overflow-wrap: break-word;
  }
  /**
   * Set `margin-bottom` to maintain vertical rhythm
