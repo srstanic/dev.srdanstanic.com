@@ -1,7 +1,9 @@
 ---
 layout: post
 title:  "[swift] Tips for parsing Swift code with SwiftSyntax"
-categories:
+categories: ios swift
+redirect_from:
+  - /2021/03/11/swiftsyntax-tips/
 ---
 
 I recently worked on a project with a goal to consolidate and standardize localization efforts in a sizeable iOS application written in Swift. This app uses a 3rd party localization service that supports Over-The-Air (OTA) localization. In short, it means that the live app can fetch the latest localizations from the server and there is no need to resubmit the app to the App Store to update the localizations. As a result of this feature, there are no `.strings` files in the project. All the localization keys and localized values are stored in a proprietary formatted database file used by the 3rd party localization service SDK.

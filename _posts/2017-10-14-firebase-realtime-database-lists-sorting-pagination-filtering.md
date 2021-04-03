@@ -1,6 +1,9 @@
 ---
 layout: post
 title:  "[firebase] How to sort, filter and paginate lists in the Firebase Realtime Database?"
+categories: firebase
+redirect_from:
+  - /2017/10/14/firebase-realtime-database-lists-sorting-pagination-filtering/
 ---
 
 Let's say you are building an app for the secret service. One of the requirements is to have a list of agents sorted by the timezone they are currently operating in. Here is how a list of agent objects might be defined in the Firebase Realtime Database:

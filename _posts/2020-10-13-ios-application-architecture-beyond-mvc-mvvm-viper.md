@@ -2,6 +2,8 @@
 layout: post
 title:  "[ios] On iOS application architecture beyond MVC, MVVM, and VIPER"
 categories: ios architecture
+redirect_from:
+  - /ios/architecture/2020/10/13/ios-application-architecture-beyond-mvc-mvvm-viper/
 ---
 
 After years of building, researching, experimenting, and iterating on iOS application architectures, I've gathered my learnings and conclusions so far into a single document. This is a document I would love to have had when I first started developing iOS applications.

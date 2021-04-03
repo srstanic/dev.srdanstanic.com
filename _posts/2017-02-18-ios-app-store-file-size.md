@@ -2,6 +2,8 @@
 layout: post
 title:  "[ios] What's the App Store file size of my app?"
 categories: ios app-store
+redirect_from:
+  - /ios/app-store/2017/02/18/ios-app-store-file-size/
 ---
 
 I was evaluating some libraries to include in the project and their size was considerably big. So I wanted to know how would that new library affect the size of my app. But I didn’t even know what’s the current size of my app. To find that out, there were a couple of things I checked:

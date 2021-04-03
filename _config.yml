@@ -6,9 +6,12 @@ repository: "srstanic/srstanic.github.io.git"
 # Build settings
 kramdown:
   input: GFM
-permalink: pretty
+permalink: /:slug/
 
 # Third-party services
 # just leave empty to disable it
 google_analytics: UA-91990229-1
 disqus_shortname: dev-srdanstanic-com
+
+plugins:
+  - jekyll-redirect-from

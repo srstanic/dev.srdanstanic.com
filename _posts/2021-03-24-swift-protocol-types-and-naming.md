@@ -1,12 +1,14 @@
 ---
 layout: post
-title:  "[swift] What types of protocols are there and how to name them?"
-categories:
+title:  "[swift] Protocol types and naming"
+categories: ios swift naming protocols
+redirect_from:
+  - /2021/03/24/naming-swift-protocols/
 ---
 
 [John Sundell](https://www.swiftbysundell.com/about/){:target="_blank"}<!-- markup clean_ --> recently wrote an article on the topic of [categorizing and naming protocols in Swift](https://www.swiftbysundell.com/articles/different-categories-of-swift-protocols/){:target="_blank"}<!-- markup clean_ -->. As I was reading it, I realized I had a different take on several ideas shared in the article.
 
-But before I go into the details, I'd like to say that I'm a big fan of John's work. The first thing I saw from John was his conference talk on [system design](https://www.swiftbysundell.com/videos/the-lost-art-of-system-design/){:target="_blank"}<!-- markup clean_ -->. Afterward I started listening to his [podcast](https://www.swiftbysundell.com/podcast/){:target="_blank"}<!-- markup clean_ --> and reading his [articles](https://www.swiftbysundell.com/articles/){:target="_blank"}<!-- markup clean_ --> regularly. I appreciate his efforts to educate us about the best practices of programming in Swift. And this post is not about whether he's wrong and I'm right, or vice versa. This post is about having different perspectives on the categorization of components and naming them. And the difference in opinion on these topics can create a lot of friction in teams. There isn't always going to be a right and wrong approach to a certain aspect of programming, but there can always be a shared convention within a team working on the same project. And it's important to have such conventions and consistency in following them because it helps the readability of the codebase. Btw. does anyone still choose tabs over spaces? 🙊
+But before I go into the details, I'd like to say that I'm a big fan of John's work. The first thing I saw from John was his conference talk on [system design](https://www.swiftbysundell.com/videos/the-lost-art-of-system-design/){:target="_blank"}<!-- markup clean_ -->. Afterward, I started listening to his [podcast](https://www.swiftbysundell.com/podcast/){:target="_blank"}<!-- markup clean_ --> and reading his [articles](https://www.swiftbysundell.com/articles/){:target="_blank"}<!-- markup clean_ --> regularly. I appreciate his efforts to educate the audience about the best practices of programming in Swift. And this post is not about whether he's wrong and I'm right, or vice versa. This post is about having different perspectives on the categorization of components and naming them. And the difference in opinion on these topics can create a lot of friction in teams. There isn't always going to be a right and wrong approach to a certain aspect of programming, but there can always be a shared convention within a team working on the same project. And it's important to have such conventions and consistency in following them because it helps the readability of the codebase. Btw. does anyone still choose tabs over spaces? 🙊
 
 In this particular article, as always, John brings some good points about writing generic code with protocol-oriented design and hiding details of third-party interfaces behind internal protocols. As for the protocol categorization, he suggests four categories of protocols:
 1. Action enablers
@@ -78,7 +80,7 @@ protocol Cachable: Codable {
 }
 ```
 
-John argues that this is not a good name because the `Cachable` protocol doesn't contain any methods that would perform the caching. But the question is, why should `Cachable` have any methods to perform caching? The protocol describes something that can be cached and the requirement for that something is to provide a `cacheKey`. `Cachable` is a perfectly suitable name for it. If this type itself needed to perform caching actions, then a more fitting name for it would be `Caching`.
+John argues that this is not a good name because the `Cachable` protocol doesn't contain any methods that would perform the caching. But the question is, why should `Cachable` have any methods to perform caching? The protocol describes something that can be cached and the requirement for that something is to provide a `cacheKey`. `Cachable` is a suitable name for it. If this type itself needed to perform caching actions, then a more fitting name for it would be `Caching`.
 
 The following example is a more complicated one - the `Swift.Collection.Sequence` protocol from the Swift Standard Library.
 
@@ -109,7 +111,7 @@ protocol Loading {
 }
 ```
 
-But getting back to the `Sequence` example, naming the `Iterator` as such doesn't sound quite right, because the `Iterator` doesn't fit the *is something* category. Apple docs summarize the `Iterator` type like this:
+But getting back to the `Sequence` example, naming the `Iterator` as such doesn't sound quite right, because the `Iterator` doesn't fit the *is something* category. Apple's documentation summarizes the `Iterator` type like this:
 
 > A type that supplies the values of a sequence one at a time.
 
@@ -141,7 +143,7 @@ protocol TitleConvertible {
 }
 ```
 
-I get the line of thinking there, but since title is not a type that the implementer can be converted to, I would look further for a good candidate for this protocol's name. And I would even say that the fact that something has a title doesn't justify having a separate protocol. To put it differently, it's not useful for many different types to conform to the same generic `title`-requring protocol, because it's unlikely that there is going to be generic logic applicable to anything that has a title. But if there is something that *is something* and also has a title, it might be worth having a protocol for it. For example, a view that has a title could be defined as a `TitledView` protocol, which extends from a `View` protocol.
+I get the line of thinking there, but since the title is not a type to which the implementer can be converted, I would look further for a good candidate for this protocol’s name.   And I would even say that the fact that something has a title doesn't justify having a separate protocol. To put it differently, it's not useful for many different types to conform to the same generic `title`-requiring protocol, because it's unlikely that there is going to be generic logic applicable to anything that has a title. But if there is something that *is something* and also has a title, it might be worth having a protocol for it. For example, a view that has a title could be defined as a `TitledView` protocol, which extends from a `View` protocol.
 
 ```
 protocol TitledView: View {
@@ -157,4 +159,4 @@ To reiterate the previous points, I would suggest using the following categoriza
 2. If the implementer *is doing something*, name the protocol with an adjective ending with `ing`, e.g. `Loading`, `Generating`, `Coordinating`
 3. If *something is done to* the implementer, name the protocol with an adjective ending with `able` or `ible`, e.g. `Comparable`, `Codable`, `Cachable`
 
-If you agree or disagree with any of the above, please let me know in the comments.
+If you have any thoughts, remarks, or a different viewpoint on any of the above, please let me know in the comments.
