@@ -42,7 +42,7 @@ Now let's go through some of the examples John provided.
 
 There is a `Loadable` protocol defined which unifies several types that load various objects or values.
 
-```
+```swift
 protocol Loadable {
     associatedtype Result
     func load() throws -> Result
@@ -51,7 +51,7 @@ protocol Loadable {
 
 If we look at what this type does, it performs an action of loading. It is not being loaded itself. The `Result` is the thing being loaded. Thus an appropriate name for this protocol would be `Loading` or `ResultLoading`.
 
-```
+```swift
 protocol Loading {
     associatedtype Result
     func load() throws -> Result
@@ -60,7 +60,7 @@ protocol Loading {
 
 And if we want the result to be `Loadable`, we can define the protocol that way and make the result type conform to it.
 
-```
+```swift
 protocol Loadable {
     func load() throws -> Self
 }
@@ -74,7 +74,7 @@ But that's probably not a good idea. A loading operation usually requires some d
 
 The next example discussed is `Cachable`.
 
-```
+```swift
 protocol Cachable: Codable {
     var cacheKey: String { get }
 }
@@ -84,7 +84,7 @@ John argues that this is not a good name because the `Cachable` protocol doesn't
 
 The following example is a more complicated one - the `Swift.Collection.Sequence` protocol from the Swift Standard Library.
 
-```
+```swift
 public protocol Sequence {
     associatedtype Iterator: IteratorProtocol
     func makeIterator() -> Self.Iterator
@@ -95,7 +95,7 @@ First, let's look at the `IteratorProtocol` protocol. Adding a `Protocol` suffix
 
 Whenever I deal with generics, I like to suffix the type parameter name with a `Type` suffix. That makes it very easy to distinguish between actual types and their placeholders in the generic code, and makes the code more readable. So in the `Sequence` example, I would propose the following naming.
 
-```
+```swift
 public protocol Sequence {
     associatedtype IteratorType: Iterator
     func makeIterator() -> Self.IteratorType
@@ -104,7 +104,7 @@ public protocol Sequence {
 
 And following the same convention, let's update the earlier `Loading` protocol.
 
-```
+```swift
 protocol Loading {
     associatedtype ResultType
     func load() throws -> ResultType
@@ -117,7 +117,7 @@ But getting back to the `Sequence` example, naming the `Iterator` as such doesn'
 
 The `Iterator` has a `next()` method which provides the next item in the sequence. The implementer of this protocol is something that can be iterated. So a more appropriate name for the protocol would be `Iterable`. And finally the `Sequence` protocol would look like the following.
 
-```
+```swift
 public protocol Sequence {
     associatedtype IterableType: Iterable
     func makeIterable() -> Self.IterableType
@@ -126,7 +126,7 @@ public protocol Sequence {
 
 The next example is a `ColorProvider` protocol described as an interface for a container of colors.
 
-```
+```swift
 protocol ColorProvider {
     var foregroundColor: UIColor { get }
     var backgroundColor: UIColor { get }
@@ -137,7 +137,7 @@ Again, I find using a noun here inappropriate because this type is not in the *i
 
 Another example from John's article is a protocol that describes something that has a `title` property. This one is tricky. John placed it into the *type conversion* category suggesting the `TitleConvertible` name.
 
-```
+```swift
 protocol TitleConvertible {
     var title: String { get }
 }
@@ -145,7 +145,7 @@ protocol TitleConvertible {
 
 I get the line of thinking there, but since the title is not a type to which the implementer can be converted, I would look further for a good candidate for this protocol’s name.   And I would even say that the fact that something has a title doesn't justify having a separate protocol. To put it differently, it's not useful for many different types to conform to the same generic `title`-requiring protocol, because it's unlikely that there is going to be generic logic applicable to anything that has a title. But if there is something that *is something* and also has a title, it might be worth having a protocol for it. For example, a view that has a title could be defined as a `TitledView` protocol, which extends from a `View` protocol.
 
-```
+```swift
 protocol TitledView: View {
     var title: { get set }
 }
