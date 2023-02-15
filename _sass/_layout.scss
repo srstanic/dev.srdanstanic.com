@@ -6,7 +6,7 @@
     background-size: 0 100%;
     background-repeat: no-repeat;
     transition: background .5s;
-    &:hover, {
+    &:hover {
         background-size: 100% 100%;
     }
     &--thin {
@@ -160,27 +160,29 @@
     h4,
     h5,
     h6 {
-        margin-top: 2rem;
+        margin-top: $spacing-unit;
         font-weight: normal;
     }
 
-    h1,
-    h2 {
+    h1 {
         font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
     }
 
     h3 {
         font-size: 1.5rem;
     }
 
-    h4 {
-        font-size: 1.25rem;
-    }
-
+    h4,
     h5,
     h6 {
         font-size: 1rem;
     }
+
+
 }
 
 .copyright {
@@ -195,9 +197,17 @@
   }
 }
 
-.back {
+.navigation {
     display: block;
     font-size: .875rem;
-    margin-bottom: 0.6rem;
     font-weight: bolder;
+}
+
+.top-navigation {
+    margin-bottom: $spacing-unit*1.5;
+}
+
+.bottom-navigation {
+    margin-top: $spacing-unit*1.5;
+    margin-bottom: $spacing-unit*0.75;
 }

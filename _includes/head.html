@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="{{ "/assets/mobile-code.png" | prepend: site.baseurl | prepend: site.url }}">
   <!-- mobile-code.png icon courtesy of https://freeicons.io/user-icons/applications-and-programming-mobile-development-coding-code-xcode-icon-41751# -->
-  <title>{% if page.title %}{{ " - " | prepend: page.title }}{% endif %}{{ site.title }}</title>
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <link rel="stylesheet" href="{{ "/css/bootstrap-grid.min.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">

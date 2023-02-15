@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[iOS] Firebase Crashlytics/Analytics, GDPR, and user data management"
+title:  "[ios] Firebase Crashlytics/Analytics, GDPR, and user data management"
 categories: ios firebase
 ---
 
