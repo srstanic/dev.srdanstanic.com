@@ -72,6 +72,8 @@ extension SomeLoadableType: Loadable {
 
 But that's probably not a good idea. A loading operation usually requires some dependencies to a database or a network interface, and the result of a loading operation is typically a data object. And data objects should only contain data and not hold references to the infrastructure components.
 
+<div class="ml-embedded embedded-email-form" data-form="zRlsTe"></div>
+
 The next example discussed is `Cachable`.
 
 ```swift
