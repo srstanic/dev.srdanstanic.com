@@ -2,12 +2,12 @@
 layout: default
 ---
 <div class="home">
+	<h1 class="post-title">{{ site.title }}</h1>
 	<section class="site-header">
-		<h1><a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
 		<p class="site-intro">My random collection of notes on building iOS apps with Swift.</p>
 		<p class="site-intro">If you find any inaccuracies, please let me know <a href="https://twitter.com/srstanic" target="_blank">@srstanic</a>.</p>
-		<p class="site-intro">Beyond coding, I love <a href="https://engineeringstrong.com" target="_blank">strength training</a> and building <a href="https://srdanstanic.com" target="_blank">resilient engineering teams</a>.</p>
 	</section>
+	<hr/>
 	<section>
 		<ul class="post-list">
 			{% for post in site.posts %}
@@ -16,5 +16,13 @@ layout: default
 			</li>
 			{% endfor %}
 		</ul>
+	</section>
+	<hr/>
+	<section class="embedded-email-form">
+		<div class="ml-embedded" data-form="xGLrda"></div>
+	</section>
+	<hr/>
+	<section>
+		<p class="site-intro">If you are into strength training, check out <a href="https://engineeringstrong.com" target="_blank">engineeringstrong.com</a>.</p>
 	</section>
 </div>

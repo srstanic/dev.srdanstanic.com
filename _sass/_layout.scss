@@ -35,7 +35,7 @@
  * Site header
  */
 .site-header {
-    border-bottom: 1px solid $grey-color-light;
+    // border-bottom: 1px solid $grey-color-light;
     max-width: $max-width;
     p {
       font-size: $small-font-size;
@@ -83,8 +83,8 @@
  * Pages
  */
 .home {
-    section + section {
-        margin-top: $spacing-unit;
+    section {
+        margin: $spacing-unit 0 $spacing-unit 0;
         max-width: $max-width;
     }
 }
@@ -169,11 +169,11 @@
     }
 
     h2 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 
     h3 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     h4,
@@ -214,4 +214,15 @@
 
 .embedded-email-form {
     margin: $spacing-unit 0 $spacing-unit 0;
+}
+
+.home .embedded-email-form {
+    margin-top: -$spacing-unit;
+    margin-bottom: -$spacing-unit/2;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+hr {
+    border-top: 1px solid lighten($grey-color, 28%);
 }
