@@ -25,8 +25,6 @@ Swift actually supports three types of dispatch, ordered here from faster to slo
 2. table dispatch aka virtual dispatch
 3. message dispatch
 
-There are [more thorough explanations](https://www.raizlabs.com/dev/2016/12/swift-method-dispatch/){:target="_blank"}<!-- markup clean_ --> of how each of them work, but here is a quick summary.
-
 With a **direct dispatch**, there is a direct reference to the memory location where the method code is stored and that reference never changes in the run time. In the following example:
 
 ```swift
@@ -100,17 +98,17 @@ Now, before we discuss the dynamic dispatch, let's briefly mention the compiler 
 Compiler optimizations
 ----------------------
 
-[Swift compiler](https://swift.org/compiler-stdlib/#compiler-architecture){:target="_blank"}<!-- markup clean_ --> translates code from a human-friendly form into a machine-friendly form and in the process tries to optimize it to make it run faster. In the context of method dispatch, it will favor faster types over the slower. If the compiler can be sure at compile time that a particular method is going to be referenced, he might devirtualize it or even inline it.
+[Swift compiler](https://www.swift.org/swift-compiler/){:target="_blank"}<!-- markup clean_ --> translates code from a human-friendly form into a machine-friendly form and in the process tries to optimize it to make it run faster. In the context of method dispatch, it will favor faster types over the slower. If the compiler can be sure at compile time that a particular method is going to be referenced, he might devirtualize it or even inline it.
 
 **[Devirtualization](https://blogs.unity3d.com/2016/07/26/il2cpp-optimizations-devirtualization/){:target="_blank"}<!-- markup clean_ -->** is a common compiler optimization tactic which changes a virtual method call into a direct method call.
 
-**[Inlining](http://www.compileroptimizations.com/category/function_inlining.htm){:target="_blank"}<!-- markup clean_ -->** is a compiler optimization tactic which replaces a direct method call with the method code inline.
+**[Inlining](http://compileroptimizations.com/category/function_inlining.htm){:target="_blank"}<!-- markup clean_ -->** is a compiler optimization tactic which replaces a direct method call with the method code inline.
 
 
 Great, now will you finally tell me about dynamic dispatch?
 -----------------------------------------------------------
 
-Well, you will see both virtual dispatch and message dispatch referred to as dynamic dispatch. And although they are different mechanisms, they both are dynamic. But besides them being different mechanisms with different strengths and weaknesses, there is one other important distinction. Table dispatch is a part of pure Swift, while message dispatch is only supported in the Cocoa environments. The [Objective-C runtime library](https://novemberfive.co/blog/objective-c-runtime/){:target="_blank"}<!-- markup clean_ --> is actually the one providing the message dispatch mechanism.
+Well, you will see both virtual dispatch and message dispatch referred to as dynamic dispatch. And although they are different mechanisms, they both are dynamic. But besides them being different mechanisms with different strengths and weaknesses, there is one other important distinction. Table dispatch is a part of pure Swift, while message dispatch is only supported in the Cocoa environments. The [Objective-C runtime library](https://developer.apple.com/documentation/objectivec/objective-c_runtime){:target="_blank"}<!-- markup clean_ --> is actually the one providing the message dispatch mechanism.
 
 That finally brings us to the strength of the message dispatch. Since there is only one reference to one given method or property it can be safely and easily modified at run time. And Objective-C runtime provides tools to do it. These tools are the basis of cool dynamic features like KVC, KVO and UIAppearance.
 
@@ -174,10 +172,8 @@ _Thanks to [Srđan Rašić](https://github.com/srdanrasic){:target="_blank"}<!--
 References
 ----------
 * [https://krakendev.io/blog/hipster-swift](https://krakendev.io/blog/hipster-swift){:target="_blank"}
-* [https://www.raizlabs.com/dev/2016/12/swift-method-dispatch/](https://www.raizlabs.com/dev/2016/12/swift-method-dispatch/){:target="_blank"}
 * [https://cocoacasts.com/what-does-the-dynamic-keyword-mean-in-swift-3/](https://cocoacasts.com/what-does-the-dynamic-keyword-mean-in-swift-3/){:target="_blank"}
-* [https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID57](https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID57){:target="_blank"}
-* [https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/Swift_Programming_Language/Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-ID351](https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/Swift_Programming_Language/Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-ID351){:target="_blank"}
+* [https://docs.swift.org/swift-book/documentation/the-swift-programming-language/declarations#Declaration-Modifiers](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/declarations#Declaration-Modifiers){:target="_blank"}
 * [https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151207/001707.html](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151207/001707.html){:target="_blank"}
 * [http://cocoasamurai.blogspot.hr/2010/01/understanding-objective-c-runtime.html](http://cocoasamurai.blogspot.hr/2010/01/understanding-objective-c-runtime.html){:target="_blank"}
 * [https://blogs.unity3d.com/2016/07/26/il2cpp-optimizations-devirtualization/](https://blogs.unity3d.com/2016/07/26/il2cpp-optimizations-devirtualization/){:target="_blank"}

@@ -92,7 +92,7 @@ Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true)
 How to control when Analytics collects user data?
 -------------------------------------------------
 
-Similar to Crashlytics, Analytics can be configured to [disable automatic crash reporting](https://firebase.google.com/docs/analytics/configure-data-collection?platform=ios#disable_data_collection){:target="_blank"}<!-- markup clean_ --> by adding an entry to the project's `Info.plist` file:
+Similar to Crashlytics, Analytics can be configured to [disable automatic data collection](https://firebase.google.com/docs/analytics/configure-data-collection?platform=ios#disable_data_collection){:target="_blank"}<!-- markup clean_ --> by adding an entry to the project's `Info.plist` file:
 
 ```
 FIREBASE_ANALYTICS_COLLECTION_ENABLED: false
