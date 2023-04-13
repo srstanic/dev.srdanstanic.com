@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .underlined {
     flex: 1;
     text-decoration: none;
@@ -90,7 +92,7 @@
 }
 
 .post-list > li {
-    margin-bottom: $spacing-unit / 4;
+    margin-bottom: calc($spacing-unit / 4);
     list-style-type: none;
     margin-left: -2rem;
 
@@ -218,7 +220,7 @@
 
 .home .embedded-email-form {
     margin-top: -$spacing-unit;
-    margin-bottom: -$spacing-unit/2;
+    margin-bottom: math.div(-$spacing-unit, 2);
     margin-left: -20px;
     margin-right: -20px;
 }
