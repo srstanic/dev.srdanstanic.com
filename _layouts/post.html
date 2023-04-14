@@ -24,7 +24,11 @@ layout: default
   		•	<span class="tags" itemprop="tags">{{ tags_content }}</span>
 
   	  {% endif %}
-
+      &nbsp;•&nbsp;
+      <span>
+        {% assign read_time_content = page.content %}
+        {% include read_time.html %}
+      </span>
     </p>
   </header>
   <div class="post-content" itemprop="articleBody">

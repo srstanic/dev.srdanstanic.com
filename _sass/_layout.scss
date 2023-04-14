@@ -100,21 +100,21 @@
         color: $title-color;
         text-decoration: none;
         font-weight: normal;
+        margin-right: 0.25rem;
 
         &:hover {
             text-decoration: underline;
         }
     }
 
-    time {
+    .meta {
         font-size: $small-font-size;
         color: $grey-color;
         display: inline-block;
     }
     @include media-query($on-palm) {
-        time {
+        .meta {
             display: block;
-            font-size: $small-font-size;
         }
     }
 }
@@ -138,8 +138,8 @@
 }
 
 .post-meta {
-    font-size: $small-font-size;
-    font-family: $code-font-family;
+    font-size: $base-font-size;
+    font-family: $base-font-family;
     color: $grey-color;
     a, a:visited {
       color: $grey-color-dark;
