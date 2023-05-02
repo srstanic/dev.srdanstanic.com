@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[swift] Rounded border button"
+title:  "Rounded border button in Swift and UIKit"
 categories: ios swift uibutton
 redirect_from:
   - /ios/swift/uibutton/2017/03/30/rounded-border-button/

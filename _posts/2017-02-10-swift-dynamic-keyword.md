@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[swift] Dynamic keyword"
+title:  "Dynamic keyword in Swift"
 categories: ios swift
 redirect_from:
   - /ios/swift/2017/02/10/swift-dynamic-keyword/

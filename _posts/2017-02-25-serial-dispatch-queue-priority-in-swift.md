@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[swift] How to create a serial queue with specified priority?"
+title:  "How to create a serial queue with a specified priority in Swift?"
 categories: ios swift gcd
 redirect_from:
   - /ios/swift/gcd/2017/02/25/serial-dispatch-queue-priority/

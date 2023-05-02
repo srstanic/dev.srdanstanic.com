@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[swift] Swift Concurrency Quick Start"
+title:  "Swift Concurrency Quick Start"
 categories: ios swift concurrency
 ---
 

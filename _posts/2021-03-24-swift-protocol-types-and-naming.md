@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[swift] Protocol types and naming"
+title:  "Swift protocol naming guidelines with examples"
 categories: ios swift naming protocols
 redirect_from:
   - /2021/03/24/naming-swift-protocols/

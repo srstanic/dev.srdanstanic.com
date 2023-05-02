@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[ios] On iOS application architecture beyond MVC, MVVM, and VIPER"
+title:  "iOS application architecture beyond MVC, MVVM, and VIPER"
 categories: ios architecture
 redirect_from:
   - /ios/architecture/2020/10/13/ios-application-architecture-beyond-mvc-mvvm-viper/
@@ -12,4 +12,4 @@ It goes beyond standard architectural patterns like MVC, MVVM, and VIPER, which 
 
 You can download it <a href="{{ site.url }}/assets/ios-application-architecture-by-srdan-stanic.pdf" target="_blank" onclick="ga('send', 'event', 'PDF', 'Download', 'iOS Architecture PDF');">here</a>.
 
-I'm curious to hear if you found it helpful, disagreeable, or both, so please let me know either way. You can leave a comment below or ping me on [Twitter](https://twitter.com/srstanic){:target="_blank"}<!-- markup clean_ -->.
+I'm curious to hear if you found it helpful, disagreeable, or both, so please let me know either way. You can leave a comment below or ping me on [Twitter](https://twitter.com/srstanic){:target="_blank"}.

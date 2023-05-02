@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to add logging to an iOS app in a clean way"
+title:  "How to add logging to an iOS app in a clean way?"
 categories: ios architecture logging clean
 ---
 

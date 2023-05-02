@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[ios] What's the App Store file size of my app?"
+title:  "What's the App Store file size of my iOS app?"
 categories: ios app-store
 redirect_from:
   - /ios/app-store/2017/02/18/ios-app-store-file-size/

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[firebase] How to sort, filter and paginate lists in the Firebase Realtime Database?"
+title:  "How to sort, filter, and paginate lists in the Firebase Realtime Database?"
 categories: firebase
 redirect_from:
   - /2017/10/14/firebase-realtime-database-lists-sorting-pagination-filtering/

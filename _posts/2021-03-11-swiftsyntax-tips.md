@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[swift] Tips for parsing Swift code with SwiftSyntax"
+title:  "Tips for parsing Swift code with SwiftSyntax"
 categories: ios swift
 redirect_from:
   - /2021/03/11/swiftsyntax-tips/
