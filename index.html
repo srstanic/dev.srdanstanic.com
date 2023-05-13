@@ -2,11 +2,16 @@
 layout: default
 ---
 <div class="home">
-	<h1 class="post-title">{{ site.title }}</h1>
-	<section class="site-header">
-		<p class="site-intro">My random collection of notes on building iOS apps with Swift.</p>
-		<p class="site-intro">If you find any inaccuracies, please let me know <a href="https://twitter.com/srstanic" target="_blank">@srstanic</a>.</p>
-	</section>
+	<div class="site-header">
+		<div class="">
+			<h1 class="post-title">{{ site.title }}<img class="header-image" src="{{ "/assets/srdan-hi.png" | prepend: site.baseurl }}"></h1>
+			<section>
+				<!-- <img class="header-image" src="{{ "/assets/srdan-hi.png" | prepend: site.baseurl }}"> -->
+				<p class="site-intro">Hi there! Follow me as I share lessons learned from years of developing iOS apps. My goal is to offer unique insights and highlight best practices, whether through in-depth articles or quick tips.</p>
+				<p class="site-intro">If you have any feedback, please let me know <a href="https://twitter.com/srstanic" target="_blank">@srstanic</a>.</p>
+			</section>
+		</div>
+	</div>
 	<hr/>
 	<section>
 		<ul class="post-list">

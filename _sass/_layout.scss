@@ -39,6 +39,7 @@
 .site-header {
     // border-bottom: 1px solid $grey-color-light;
     max-width: $max-width;
+
     p {
       font-size: $small-font-size;
     }
@@ -49,6 +50,21 @@
     h1 {
         a:hover {
             text-decoration: none;
+        }
+    }
+
+    .header-image {
+        height: auto; // to maintain aspect ratio
+        float: right;
+        margin-right: 1rem;
+        margin-top: 2rem;
+        margin-left: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @include media-query($on-palm) {
+        .header-image {
+            max-width: 100px;
         }
     }
 }
@@ -70,8 +86,6 @@
         padding-bottom: 0.2rem;
     }
 }
-
-
 
 /**
  * Page content
